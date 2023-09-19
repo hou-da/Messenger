@@ -37,29 +37,3 @@ const sendSMS = async(phone_number)=>{
 
 }
 module.exports = sendSMS;
-/*verifySMS = async(req, res)=>{
-    try {
-
-        const {phone_number,code}= req.body
-        
-        if(!phone_number) throw new Error ('entre your phone Number')
-        let user = await User.findOne({phone_number: req.body.phone_number})
-        if (!user) return res.status(400).send({message: 'phone not exist Used!'})
-        const accountSid = process.env.TWILIO_ACCOUNT_SID;
-        const authToken = process.env.TWILIO_AUTH_TOKEN;
-        const client = require('twilio')(accountSid, authToken);
-        
-        client.verify.v2.services('LHESARIBV8kKRgifcTzAnztXrp_A032sbfxqcTAW')
-                        .verifications
-                        .create({to: phone_number, code: code})
-                        .then(verification => console.log(verification.status));
-        const updatedUser = await User.findByIdAndUpdate(user._id, {
-          $set: { activePhone: true },})
-          //await OTP.save()
-
-         res.status(200).json({ message: 'OTP verified. User is now verified.' });
-       
-     } catch (error) {
-       res.status(400).json({ error: error.message });
-     }
-};*/

@@ -2,9 +2,6 @@ const nodemailer = require("nodemailer")
 const _ = require("lodash")
 const bcrypt = require("bcrypt")
 const User = require('../models/User')
-//const User = require("../models/numb")
-
-
 
 const sendEmail = async (email, subject, link) => {
 
@@ -30,13 +27,8 @@ const sendEmail = async (email, subject, link) => {
     subject: 'Welcome to ISend, please verify your email!',
 
     link:link
-   
-  
-   
+      
 });
  
-
-
-
 }
 module.exports = sendEmail;

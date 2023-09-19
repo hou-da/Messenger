@@ -1,6 +1,5 @@
 const  sendSMS  = require("../controllers/sendSMS");
 const sendEmail = require ("../controllers/sendEmail");
-
 const Code = require('../models/Code')
 const router = require("express").Router();
 const User = require("../models/User");
