@@ -1,0 +1,156 @@
+.messenger {
+  height: calc(100vh - 50px);
+  display: flex;
+  
+}
+
+.chatMenu {
+  flex: 3.5;
+}
+.chatInfo{
+  height:50px;
+  background-color: rgb(65, 20, 109);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:10px;
+  color: lightgray;
+
+
+}
+.chatIcons{
+  display: flex;
+  gap: 10px;
+}
+img{
+  height: 24px;
+  cursor: pointer;
+}
+
+.chatMenuInput {
+  width: 90%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.chatBox {
+  flex: 5.5;
+}
+
+.chatBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.chatBoxTop {
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+
+.chatBoxBottom {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height:50px;
+  padding:10px;
+  align-items:center;
+}
+.send{
+display: flex;
+align-items: center;
+gap:10px;
+}
+.inputsendImg{
+height:24px;
+cursor: pointer;
+justify-content: space-between;
+height: 100%;
+}
+
+.chatMessageInput {
+  width: 80%;
+  height: 90px;
+  padding: 10px;
+}
+
+.chatSubmitButton {
+  width: 70px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(65, 20, 109);
+  color: white;
+}
+
+.chatOnline {
+  flex: 3;
+}
+.chatBoxWrapper{
+  padding: 10px;
+  height: 100%;
+  
+}
+.chatMenuWrapper,
+.chatOnlineWrapper {
+  padding: 10px;
+  height: 100%;
+}
+
+.noConversationText {
+  position: absolute;
+  top: 10%;
+  font-size: 50px;
+  color: rgb(224, 220, 220);
+  cursor: default;
+}
+.chatHr {
+  margin: 5px;
+}
+.chatImgContainer{
+  padding: 5px 5px 5px 5px;
+  position: relative;
+}
+
+.chatImg{
+  width: 60%;
+  height: 100%;
+  
+  object-fit: cover;
+}
+
+.chatCancelImg{
+  position: absolute;
+  top:0px;
+  right: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.emoji{
+margin-top: 10px;
+margin-right: 10px;
+
+}
+
+@media screen and (max-width: 768px) {
+  .chatMenu {
+    flex: 1;
+  }
+
+  .chatMenuInput {
+    display: none;
+  }
+
+  .chatBox{
+    flex: 10;
+  }
+
+  .chatOnline{
+    flex: 1px;
+  }
+}

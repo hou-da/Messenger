@@ -1,0 +1,7 @@
+{
+    "jwtPrivateKey": "influenceer_app_jwt_private_key",
+    "dblocal": "mongodb://localhost/influenceer_db",
+    "dbtest": "mongodb://localhost/influenceer_db",
+    "dbremote": ""
+
+}

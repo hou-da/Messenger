@@ -1,0 +1,87 @@
+import { useContext, useRef } from "react";
+import axios from "axios"
+import "./login.css";
+import { CircularProgress } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom"
+
+import { toast } from "react-toastify";
+
+
+export default function Login() {
+  const email = useRef();
+  const password = useRef();
+  const navigate = useNavigate();
+  //const { isFetching, dispatch } = useContext(AuthContext);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+        
+            let user={email: email.current.value,
+                password: password.current.value,};
+            try {
+                axios.post('http://127.0.0.1:8800/api/auth/login', user
+                )
+                .then((res) => {
+                   console.log(res,"aaaaaaaaaaa");
+                    if(res.data.message === "login successful"){
+                        
+                        toast.success('Login successfully.')
+                         navigate('/messenger/',);
+
+                        }
+                    }).catch((err) => {
+                toast.error('Failed :' + err.message);
+            });
+                } catch (err) {
+                    console.log(err);
+                }
+
+            }
+    return(
+        <div className="login">
+            <div className="loginWrapper">
+                <div className="loginLeft">
+                    <h3 className="loginLogo">ISend</h3>
+                    <span className="loginDesc">
+                    Connecte with friends and the world around you on ISend.
+
+                    </span>
+                </div>
+                <div className="loginRight">
+                    <form className="loginBox"  onSubmit={handleClick} >
+                    <h3 className="RegisterDesc " >Login</h3>
+                        <input
+                            placeholder="Email"
+                            type="email"
+                            required
+                            className="loginInput"
+                            ref={email}
+                        />
+                        <input
+                            placeholder="Password"
+                            type="password"
+                            required
+                            minLength="6"
+                            className="loginInput"
+                            ref={password}
+                        />
+                         <button className="loginButton" type="submit" >
+                Log In
+              
+            </button>
+                        
+            <Link className="loginForgot">Forgot Password?</Link>
+            <button className="loginRegisterButton">
+            
+                "Create a New Account"
+              
+            </button>
+                    </form>
+       
+            
+                </div>
+            </div>
+        </div>
+    )
+}
